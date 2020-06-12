@@ -18,7 +18,7 @@ set wildmenu
 filetype indent plugin on
 set splitright
 set splitbelow
-set nowrap
+set wrap
 set backspace=indent,eol,start
 
 " Toggle Vexplore with Ctrl-O

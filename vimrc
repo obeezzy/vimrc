@@ -21,6 +21,9 @@ set splitbelow
 set wrap
 set backspace=indent,eol,start
 
+" Auto closing a HTML tag
+abbrev <// </<C-X><C-0>
+
 " Toggle Vexplore with Ctrl-O
 function! ToggleVExplorer()
     if exists("t:expl_buf_num")
@@ -43,8 +46,6 @@ map <silent> <C-O> :call ToggleVExplorer()<CR>
 
 " Toggle highlight search
 nnoremap <F3> :set hlsearch!<CR>
-" Show buffers and select buffer by number
-:nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " Auto-save sessions
 function! MakeSession()
@@ -90,7 +91,7 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 " vinegar-vim
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+" let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 
 " ALE
@@ -109,3 +110,14 @@ let g:ale_lint_on_insert_leave = 0
 " Set as default theme
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
+
+" dart-vim-plugin
+" Enable HTML syntax higlighting inside Dart strings
+let dart_html_in_string=v:true
+let g:dart_style_guide = 2
+let g:dart_format_on_save = 1
+
+" Show buffers and select buffer by number
+nnoremap ,b :ls<CR>:buffer<Space>
+" Code snippets
+nnoremap <C-S> :r<Space>$SNIPPETS/

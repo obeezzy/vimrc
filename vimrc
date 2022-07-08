@@ -20,6 +20,7 @@ set splitright
 set splitbelow
 set wrap
 set backspace=indent,eol,start
+set wildignorecase
 
 " Auto closing a HTML tag
 abbrev <// </<C-X><C-0>
